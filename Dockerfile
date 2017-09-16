@@ -47,7 +47,7 @@ COPY ./pdns.conf /etc/powerdns/pdns.conf
 # Set the etcd
 RUN mkdir -p /etc/ssl/etcd/
 ENV ITDNS_ETCD3_CA /etc/ssl/etcd/ca.pem
-ENV ITDNS_ETCD3_ENTRYPOINTS https://localhost:2379
+ENV ITDNS_ETCD3_ENDPOINTS https://localhost:2379
 
 
 EXPOSE  53
