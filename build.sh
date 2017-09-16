@@ -12,7 +12,6 @@ for i in "$@"
         --goach=*)
             GO_ATCH="${i#*=}"
         ;;
-        *)
         --qemuversion=*)
             QEMU_VER="${i#*=}"
         ;;
