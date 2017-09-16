@@ -9,6 +9,10 @@ for i in "$@"
         --qemuarch=*)
             QEMU_ARCH="${i#*=}"
         ;;
+        --goach=*)
+            GO_ATCH="${i#*=}"
+        ;;
+        *)
         --qemuversion=*)
             QEMU_VER="${i#*=}"
         ;;
@@ -29,4 +33,4 @@ if [ -n "${QEMU_ARCH}" ]; then
     tar -xvf x86_64_qemu-${QEMU_ARCH}-static.tar.gz -C $ROOTFS/usr/bin/
 fi
 
-docker build --build-arg arch="${ARCH}" -t "${DOCKER_REPO}:${ARCH}-latest" ./
+docker build --build-arg arch="${ARCH}" --build-arg go_arch="${GO_ARCH}" -t "${DOCKER_REPO}:${ARCH}-latest" ./

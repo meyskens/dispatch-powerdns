@@ -5,12 +5,13 @@ RUN apt-get update && apt-get -y upgrade
 RUN apt-get -y install pdns-server pdns-backend-remote git wget curl tar 
 
 ARG arch
+ARG go_arch
 ARG etcd_version=v3.2.6
 ARG go_version=1.9
 ARG itdns_version=2.1
 
 #Install golang
-RUN wget -O -  "https://golang.org/dl/go${go_version}.linux-${arch}.tar.gz" | tar xzC /usr/local
+RUN wget -O -  "https://golang.org/dl/go${go_version}.linux-${go_arch}.tar.gz" | tar xzC /usr/local
 ENV GOPATH /go
 ENV PATH $PATH:/usr/local/go/bin:$GOPATH/bin
 
