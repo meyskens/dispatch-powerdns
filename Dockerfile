@@ -55,6 +55,6 @@ EXPOSE  53/udp
 
 # Copy start
 
-COPY ./start.sh /opt/itdns/start,sh
+COPY ./start.sh /opt/itdns/start.sh
 
-CMD /opt/itdns/start,sh
+CMD /opt/itdns/start.sh
