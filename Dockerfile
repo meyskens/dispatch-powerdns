@@ -8,7 +8,7 @@ ARG arch
 ARG go_arch
 ARG etcd_version=v3.2.6
 ARG go_version=1.9
-ARG itdns_version=2.1
+ARG itdns_version=2.1.1
 
 #Install golang
 RUN wget -O -  "https://golang.org/dl/go${go_version}.linux-${go_arch}.tar.gz" | tar xzC /usr/local
